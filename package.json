@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack -wd eval-source-map",
+    "dev": "babel-node src/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YuliyaBugorskaya/LearnWordsProject.git",
-    "webpack": "webpack -wd eval-source-map",
-    "dev": "babel-node src/server.js"
+    "url": "git+https://github.com/YuliyaBugorskaya/LearnWordsProject.git"
   },
   "keywords": [],
   "author": "",

@@ -5,10 +5,11 @@ import store from 'session-file-store';
 import path from 'path';
 import indexRouter from './routes/indexRouter';
 import apiRouter from './routes/apiRouter';
+import jsxRender from './utils/jsxRender';
 
 require('dotenv').config();
 
-const PORT = process.env.SERVER_PORT || 3002;
+const PORT = process.env.SERVER_PORT || 3000;
 const app = express();
 const FileStore = store(session);
 
