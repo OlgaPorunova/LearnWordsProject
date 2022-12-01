@@ -1,7 +1,16 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-export default function App() {
+import Cards from './Cards';
+
+function App({ cards }) {
   return (
-    <div>App</div>
+    <Routes>
+      <Route path="/cards/:id" element={<Cards cards={cards} />} />
+
+    </Routes>
+
   );
 }
+
+export default App;

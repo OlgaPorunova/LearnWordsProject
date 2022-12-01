@@ -6,6 +6,7 @@ import path from 'path';
 import indexRouter from './routes/indexRouter';
 import apiRouter from './routes/apiRouter';
 import jsxRender from './utils/jsxRender';
+import cardsRouter from './routes/cardsRouter';
 
 require('dotenv').config();
 
@@ -35,7 +36,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session(sessionConfig));
 
+app.use((req, res, next) => {
+  res.locals.path = req.originalUrl;
+  //   res.locals.email = req.session?.user?.email;
+  //   res.locals.name = req.session?.user?.name;
+  next();
+});
+
 app.use('/', indexRouter);
+app.use('/cards', cardsRouter);
 app.use('/api/v1', apiRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

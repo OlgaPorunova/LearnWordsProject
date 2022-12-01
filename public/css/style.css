@@ -1,0 +1,28 @@
+.cardsssss {
+  transform: rotateY(150deg);
+
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: darkcyan;
+
+}
+
+.bottom {
+  position: absolute;
+  top: 600px;
+  right: 60px;
+  border: 2px solid darkcyan;
+  color: darkcyan
+
+}
+
+.word {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  color: azure;
+  transform: translate(-50%, -50%);
+}
