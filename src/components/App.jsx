@@ -1,16 +1,17 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-
+import Progress from './Progress';
 import Cards from './Cards';
 
-function App({ cards }) {
+export default function App({ cards, score, user }) {
   return (
-    <Routes>
-      <Route path="/cards/:id" element={<Cards cards={cards} />} />
+    <div>
+      <Routes>
+        <Route path="/cards/:id" element={<Cards cards={cards} />} />
+        <Route path="/Progress/:id" element={<Progress score={score} />} />
+      </Routes>
 
-    </Routes>
+    </div>
 
   );
 }
-
-export default App;
