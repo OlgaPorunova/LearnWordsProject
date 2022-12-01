@@ -8,4 +8,9 @@ router.get('/:id', async (req, res) => {
   const initState = { cards };
   res.render('Layout', initState);
 });
+
+router.get('/lk/kab/:id', async (req, res) => {
+  console.log('Я тут');
+});
+
 export default router;
