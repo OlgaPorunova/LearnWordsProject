@@ -1,7 +1,10 @@
 import React from 'react';
+import Progress from './Progress';
 
-export default function App() {
+export default function App({ score, user }) {
   return (
-    <div>App</div>
+    <div>
+      <Progress score={score} />
+    </div>
   );
 }
