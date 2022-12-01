@@ -6,6 +6,7 @@ import path from 'path';
 import indexRouter from './routes/indexRouter';
 import apiRouter from './routes/apiRouter';
 import jsxRender from './utils/jsxRender';
+import progrouter from './routes/progRouter';
 
 require('dotenv').config();
 
@@ -35,6 +36,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session(sessionConfig));
 
+app.use('/lk', progrouter);
+app.use(express.json({ extended: true }));
+app.use('/image', express.static(path.join(_dirname, 'image')));
 app.use('/', indexRouter);
 app.use('/api/v1', apiRouter);
 
