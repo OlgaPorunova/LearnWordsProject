@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import multirouter from '../routes/multrouter';
 
 export default function Table({ user }) {
   const [img, setImg] = UseState(null);
   const [avatar, setAvatar] = UseState(null);
 
-  const sendFile = React.useCallback(async () => {
-    try {
-      const data = new FormData();
-      data.append('avatar', img);
+  // const sendFile = React.useCallback(async () => {
+  //   try {
+  //     const data = new FormData();
+  //     data.append('avatar', img);
 
-      // обращаем к роуту который обрабатывает этот запрос и адресу ручки, data
-      await axios.post({
-        headers: multirouter,
-      })
-        .then((res) => setAvatar(res.data.path));
-    } catch (error) { console.log('ищи ошибку ТУТ!!!!!'); }
-  });
+  //     // обращаем к роуту который обрабатывает этот запрос и адресу ручки, data
+  //     await axios.post({
+  //       headers: multirouter,
+  //     })
+  //       .then((res) => setAvatar(res.data.path));
+  //   } catch (error) { console.log('ищи ошибку ТУТ!!!!!'); }
+  // });
 
   return (
     <div className="App">
