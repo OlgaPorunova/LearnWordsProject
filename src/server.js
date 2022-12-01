@@ -39,14 +39,14 @@ app.use(session(sessionConfig));
 
 app.use((req, res, next) => {
   res.locals.path = req.originalUrl;
-    res.locals.email = req.session?.user?.email;
-    res.locals.name = req.session?.user?.name;
+  // res.locals.email = req.session?.user?.email;
+  // res.locals.name = req.session?.user?.name;
   next();
 });
 
 app.use('/lk', progrouter);
 app.use(express.json({ extended: true }));
-app.use('/image', express.static(path.join(_dirname, 'image')));
+// app.use('/image', express.static(path.join(_dirname, 'image')));
 
 app.use('/', indexRouter);
 app.use('/cards', cardsRouter);
