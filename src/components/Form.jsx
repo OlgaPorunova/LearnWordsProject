@@ -18,6 +18,10 @@ export default function Form() {
     <div>
       <form onSubmit={submitHandler}>
         <div className="mb-3">
+          <label htmlFor="exampleInputEmail1" className="form-label">Photo</label>
+          <input name="link" type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+        </div>
+        <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Theme</label>
           <input name="theme" type="string" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
         </div>

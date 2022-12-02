@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
 
 router.get('/myScore', (req, res) => {
   const { user } = req.session;
+  console.log(user);
   const initState = { user };
   res.render('Layout', initState);
 });

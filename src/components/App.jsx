@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 import Table from './Table';
@@ -16,6 +16,12 @@ import Registration from './registration/Registration';
 export default function App({
   cards, score, user, initState, name,
 }) {
+  const [currUser, setcurrUser] = useState(user || {});
+  useEffect(() => {
+    fetch('/lk/user')
+      .then((data) => data.json())
+      .then((res) => setcurrUser(res));
+  }, []);
   return (
     <div className="container">
       <Navbar name={name} />
@@ -26,11 +32,10 @@ export default function App({
         <Route path="/cards/:id" element={<Cards cards={cards} />} />
         <Route path="/Progress/:id" element={<Progress score={score} />} />
         <Route path="/thems" element={<Thems dataFromDataBase={initState} />} />
-        <Route path="/myScore" element={<Table />} />
+        <Route path="/myScore" element={<Table currUser={currUser} />} />
         <Route path="/newForm" element={<Form />} />
       </Routes>
 
     </div>
-
   );
 }
