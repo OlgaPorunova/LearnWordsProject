@@ -5,9 +5,12 @@ import store from 'session-file-store';
 import path from 'path';
 import indexRouter from './routes/indexRouter';
 import apiRouter from './routes/apiRouter';
+import userRouter from './routes/userRouter';
 import jsxRender from './utils/jsxRender';
 import progRouter from './routes/progRouter';
 import newRouter from './routes/newRouter';
+import thems from './routes/thems';
+import cardsRouter from './routes/cardsRouter';
 
 require('dotenv').config();
 
@@ -16,14 +19,14 @@ const app = express();
 const FileStore = store(session);
 
 const sessionConfig = {
-  name: 'user_sid', 				// Имя куки для хранения id сессии. По умолчанию - connect.sid
-  secret: process.env.SESSION_SECRET ?? 'test',	// Секретное слово для шифрования, может быть любым
-  resave: true, 				// Пересохранять ли куку при каждом запросе
+  name: 'user_sid', // Имя куки для хранения id сессии. По умолчанию - connect.sid
+  secret: process.env.SESSION_SECRET ?? 'test', // Секретное слово для шифрования, может быть любым
+  resave: true, // Пересохранять ли куку при каждом запросе
   store: new FileStore(),
-  saveUninitialized: false, 		// Создавать ли сессию без инициализации ключей в req.session
+  saveUninitialized: false, // Создавать ли сессию без инициализации ключей в req.session
   cookie: {
     maxAge: 1000 * 60 * 60 * 12, // Срок истечения годности куки в миллисекундах
-    httpOnly: true, 				// Серверная установка и удаление куки, по умолчанию true
+    httpOnly: true, // Серверная установка и удаление куки, по умолчанию true
   },
 };
 
@@ -43,7 +46,22 @@ app.use('/lk', progRouter);
 app.use('/newForm', newRouter);
 
 // app.use('/image', express.static(path.join(_dirname, 'image')));
+app.use((req, res, next) => {
+  res.locals.path = req.originalUrl;
+  res.locals.email = req.session?.user?.email;
+  res.locals.name = req.session?.user?.name;
+  next();
+});
+
+app.use(express.json({ extended: true }));
+
+// app.use('/image', express.static(path.join(_dirname, 'image')));
+app.use('/user', userRouter);
 app.use('/', indexRouter);
+app.use('/cards', cardsRouter);
+
 app.use('/api/v1', apiRouter);
+// app.use('/in', regist);
+app.use('/thems', thems);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

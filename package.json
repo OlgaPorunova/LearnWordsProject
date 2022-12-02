@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/YuliyaBugorskaya/LearnWordsProject#readme",
   "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
     "@babel/node": "^7.20.5",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/preset-env": "^7.20.2",
@@ -37,8 +39,10 @@
     "webpack-cli": "^5.0.0"
   },
   "dependencies": {
+    "@mapbox/node-pre-gyp": "^1.0.10",
     "axios": "^1.2.0",
     "bcrypt": "^5.1.0",
+    "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
