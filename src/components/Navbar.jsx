@@ -3,9 +3,11 @@ import React from 'react';
 export default function Navbar({ name }) {
   return (
   // <div>
-    <nav className="navbar navbar-dark bg-dark">
+    <nav className="navbar" style={{ background: '#e3f2fd' }}>
+      {' '}
       Hello!
-      {name}
+      {' '}
+      { name}
       <div className="container-fluid">
         <a className="navbar-brand" href="/">learnwords</a>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,6 +20,9 @@ export default function Navbar({ name }) {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <a className="nav-link" href="/logout">Logout</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/myScore">LK</a>
               </li>
             </ul>
 

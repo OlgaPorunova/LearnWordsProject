@@ -8,11 +8,12 @@ export default function Cards({ cards }) {
 
   // fetch  запрос - при нажатии на кнопку отправить card.id
   console.log({ show });
-  const randCard = (arr, id) => {
+  const randCard = async (arr, id) => {
     console.log('click');
+    await fetch(`/lk/kab/${id}`);
     const array = arr.filter((el) => el !== card);
     if (array.length) {
-      fetch(`/cards/lk/kab/${id}`);
+      console.log('------', cardsArr);
       setCardsArr(array);
 
       setCart(array[Math.floor(Math.random() * array.length)]);
@@ -25,50 +26,47 @@ export default function Cards({ cards }) {
   //   }
 
   return (
-    <div className="container">
-      {/* </>style={{ width:"200px"; height:"150px"; }} */}
-      <h1>Let`s start learning words</h1>
-      {/* <div className="wrap"> */}
-      <div className="cards" onClick={() => setShow((prev) => !prev)}>
+    <>
+      {cardsArr.length && (
+      <div className="container">
+        {/* </>style={{ width:"200px"; height:"150px"; }} */}
+        <h1>Let`s start learning words</h1>
+        {/* <div className="wrap"> */}
+        <div className="cards" onClick={() => setShow((prev) => !prev)}>
 
-        {/* <div className="front"><span>Front</span></div> */}
-        <div className="front" style={show ? { transform: 'rotateY(180deg)' } : null}>
+          {/* <div className="front"><span>Front</span></div> */}
+          <div className="front" style={show ? { transform: 'rotateY(180deg)' } : null}>
 
-          <img
-            src={card.link}
-            style={{
-              marginLeft: '40px', marginTop: '45px', width: '650px', height: '400px',
-            }}
-            alt="Snow"
-          />
-          <h1 className="word">{card.enName}</h1>
+            <img src={card.link} style={{ width: '650px', height: '400px' }} alt="Snow" />
+            <h1 className="word">{card.enName}</h1>
 
+          </div>
+
+          <div className="back" style={show ? { transform: 'rotateY(360deg)' } : null}>
+
+            <img src={card.link} style={{ width: '650px', height: '400px' }} alt="Snow" />
+            <h1 className="word">{card.ruName}</h1>
+            <button
+              className="bottom"
+              type="button"
+              style={{ width: '150px', height: '50px' }}
+              onClick={() => {
+                randCard(cardsArr, card.id);
+              }}
+            >
+              Изучено
+
+            </button>
+
+          </div>
+
+          <div />
         </div>
 
-        <div className="back" style={show ? { transform: 'rotateY(360deg)' } : null}>
-
-          <img src={card.link} style={{ width: '650px', height: '400px' }} alt="Snow" />
-          <h1 className="word">{card.ruName}</h1>
-          <button
-            className="bottom"
-            type="button"
-            style={{ width: '150px', height: '50px' }}
-            onClick={() => {
-              randCard(cardsArr, card.id);
-            }}
-          >
-            Изучено
-
-          </button>
-
-        </div>
-
-        <div />
+        {/* </div> */}
       </div>
-
-      {/* </div> */}
-    </div>
-
+      )}
+    </>
   );
 }
 
