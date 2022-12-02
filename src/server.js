@@ -5,6 +5,7 @@ import store from 'session-file-store';
 import path from 'path';
 import indexRouter from './routes/indexRouter';
 import apiRouter from './routes/apiRouter';
+import userRouter from './routes/userRouter';
 import jsxRender from './utils/jsxRender';
 import progrouter from './routes/progRouter';
 import cardsRouter from './routes/cardsRouter';
@@ -50,6 +51,7 @@ app.use(express.json({ extended: true }));
 
 app.use('/', indexRouter);
 app.use('/cards', cardsRouter);
+
 app.use('/api/v1', apiRouter);
 
 app.listen(PORT, () => console.log(`App has started on port ${PORT}`));

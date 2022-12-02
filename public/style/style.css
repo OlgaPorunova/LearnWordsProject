@@ -1,0 +1,21 @@
+#root {
+    height: 100%;
+    width: 100%;
+    position:absolute;
+   
+    background: linear-gradient(50deg, #757F9A, #D7DDE8); 
+    
+    
+
+
+}
+.container{ 
+height: 100%;
+display: flex;
+align-items: center; 
+justify-content: center;
+}
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #535455;
+}

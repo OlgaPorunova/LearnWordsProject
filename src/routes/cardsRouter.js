@@ -9,8 +9,8 @@ router.get('/:id', async (req, res) => {
   res.render('Layout', initState);
 });
 
-router.get('/lk/kab/:id', async (req, res) => {
-  console.log('Я тут');
-});
+// router.get('/lk/kab/:id', async (req, res) => {
+//   console.log('Я тут');
+// });
 
 export default router;
