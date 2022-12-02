@@ -16,4 +16,10 @@ router.get('/avt', (req, res) => {
   res.render('Layout', initState);
 });
 
+router.get('/logout', (req, res) => {
+  req.session.destroy();
+  res.clearCookie('user_sid');
+  res.redirect('/');
+});
+
 export default router;

@@ -20,8 +20,9 @@ export default function Registration() {
     <div className="d-flex justify-content-center flex-wrap">
 
       <form className="cont" onSubmit={submitHandler}>
-        <h2 className="title">Регистрация 👋
-</h2>
+        <h2 className="title">
+          Регистрация 👋
+        </h2>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
             Name:

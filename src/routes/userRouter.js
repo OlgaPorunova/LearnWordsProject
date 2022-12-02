@@ -32,6 +32,7 @@ router.post('/avt', async (req, res) => {
   if (compare) {
     req.session.user = {
       id: currUser.id,
+      name: currUser.name,
       email: currUser.email,
     };
     res.sendStatus(200);
