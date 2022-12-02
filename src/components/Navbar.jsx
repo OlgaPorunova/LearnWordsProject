@@ -18,6 +18,9 @@ export default function Navbar({ name }) {
               <li className="nav-item">
                 <a className="nav-link" href="/logout">Logout</a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/myScore">LK</a>
+              </li>
             </ul>
 
           )

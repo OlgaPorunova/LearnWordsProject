@@ -7,6 +7,17 @@ router.get('/', (req, res) => {
   res.render('Layout', initState);
 });
 
+router.get('/myScore', (req, res) => {
+  const { user } = req.session;
+  console.log(user);
+  const initState = { user };
+  res.render('Layout', initState);
+});
+
+router.get('/newForm', (req, res) => {
+  const initState = { };
+  res.render('Layout', initState);
+});
 router.get('/reg', (req, res) => {
   const initState = { path: req.originalUrl };
   res.render('Layout', initState);
