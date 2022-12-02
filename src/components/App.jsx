@@ -1,10 +1,15 @@
 import React from 'react';
-import Progress from './Progress';
+import { Routes, Route } from 'react-router-dom';
+import Table from './Table';
+import Form from './Form';
 
-export default function App({ score, user }) {
+export default function App() {
   return (
     <div>
-      <Progress score={score} />
+      <Routes>
+        <Route path="/myScore" element={<Table />} />
+        <Route path="/newForm" element={<Form />} />
+      </Routes>
     </div>
   );
 }

@@ -33,12 +33,13 @@ router.get('/kab/:id', async (req, res) => {
   // res.render('Layout', initState);
 });
 
-router.get('./kab/prog.id', async (req, res) => {
+router.get('/kab/prog.id', async (req, res) => {
   const userId = req.params.id;
   const progress = await Score.findAll({
     where: { userId },
     include: [{
       model: Theme,
+      as: 'themes',
       attributes: ['tittle'],
     }],
   });
