@@ -34,7 +34,13 @@ export default function Cards({ cards }) {
         {/* <div className="front"><span>Front</span></div> */}
         <div className="front" style={show ? { transform: 'rotateY(180deg)' } : null}>
 
-          <img src={card.link} style={{ width: '650px', height: '400px' }} alt="Snow" />
+          <img
+            src={card.link}
+            style={{
+              marginLeft: '40px', marginTop: '45px', width: '650px', height: '400px',
+            }}
+            alt="Snow"
+          />
           <h1 className="word">{card.enName}</h1>
 
         </div>

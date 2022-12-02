@@ -15,8 +15,13 @@ export default function Authorization() {
     }
   };
   return (
-    <div className="container">
-      <form onSubmit={submitHandler}>
+    <div className="container-aut">
+      <form
+        style={{
+          display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '70px',
+        }}
+        onSubmit={submitHandler}
+      >
         <h2 className="title">Авторизация 🙌</h2>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">

@@ -33,7 +33,7 @@ export default function App({
   cards, score, user, initState, name,
 }) {
   return (
-    <div className="container">
+    <div style={{ marginLeft: '150px', marginRight: '150px' }}>
       <Navbar name={name} />
       <Routes>
         <Route path="/" element={<Mainpage />} />
@@ -45,6 +45,5 @@ export default function App({
       </Routes>
 
     </div>
-
   );
 }

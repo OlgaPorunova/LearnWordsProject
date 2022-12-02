@@ -2,7 +2,8 @@ import React from 'react';
 
 export default function Navbar({ name }) {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
+  // <div>
+    <nav className="navbar navbar-dark bg-dark">
       Hello!
       {name}
       <div className="container-fluid">
@@ -38,5 +39,8 @@ export default function Navbar({ name }) {
         </div>
       </div>
     </nav>
+
+  // </div>
+
   );
 }
