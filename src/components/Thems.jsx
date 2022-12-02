@@ -12,7 +12,7 @@ export default function Thems() {
     <div>
       <div className="d-grid gap-2">
         {themes.map((el) => (
-          <a href={`/thems/${el.id}`}>
+          <a href={`/cards/${el.id}`}>
             <button className="btn btn-primary test" type="button">{`${el.tittle}`}</button>
           </a>
         ))}

@@ -5,10 +5,11 @@ import store from 'session-file-store';
 import path from 'path';
 import indexRouter from './routes/indexRouter';
 import apiRouter from './routes/apiRouter';
+import userRouter from './routes/userRouter';
 import jsxRender from './utils/jsxRender';
-// import regist from './routes/regist';
 import thems from './routes/thems';
-
+import progrouter from './routes/progRouter';
+import cardsRouter from './routes/cardsRouter';
 
 require('dotenv').config();
 
@@ -38,7 +39,20 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session(sessionConfig));
 
+app.use((req, res, next) => {
+  res.locals.path = req.originalUrl;
+  res.locals.email = req.session?.user?.email;
+  res.locals.name = req.session?.user?.name;
+  next();
+});
+
+app.use(express.json({ extended: true }));
+app.use('/lk', progrouter);
+// app.use('/image', express.static(path.join(_dirname, 'image')));
+app.use('/user', userRouter);
 app.use('/', indexRouter);
+app.use('/cards', cardsRouter);
+
 app.use('/api/v1', apiRouter);
 // app.use('/in', regist);
 app.use('/thems', thems);
