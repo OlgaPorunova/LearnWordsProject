@@ -17,35 +17,41 @@ export default function Registration() {
     }
   };
   return (
-    <div className="d-flex justify-content-center flex-wrap">
+  // <div className="container-reg">
 
-      <form className="cont" onSubmit={submitHandler}>
-        <h2 className="title">
-          Регистрация 👋
-        </h2>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Name:
-            <input name="name" type="text" className="form-control" id="exampleInputEmail1" placeholder="Введите имя" aria-describedby="emailHelp" />
-          </label>
+    <form
+      style={{
+        display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '70px',
+      }}
+      className="cont"
+      onSubmit={submitHandler}
+    >
+      <h2 className="title">
+        Регистрация 👋
+      </h2>
+      <div className="mb-3">
+        <label htmlFor="exampleInputEmail1" className="form-label">
+          Name:
+          <input name="name" type="text" className="form-control" id="exampleInputEmail1" placeholder="Введите имя" aria-describedby="emailHelp" />
+        </label>
 
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">
-            Email:
-            <input name="email" type="text" className="form-control" id="exampleInputEmail1" placeholder="Введите  Email" aria-describedby="emailHelp" />
-          </label>
+      </div>
+      <div className="mb-3">
+        <label htmlFor="exampleInputEmail1" className="form-label">
+          Email:
+          <input name="email" type="text" className="form-control" id="exampleInputEmail1" placeholder="Введите  Email" aria-describedby="emailHelp" />
+        </label>
 
-        </div>
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">
-            Password:
-            <input name="pass" type="password" className="form-control" placeholder="Введите пароль" id="exampleInputPassword1" />
-          </label>
-        </div>
-        <button type="submit" className="btn btn-secondary">Зарегистрироваться</button>
+      </div>
+      <div className="mb-3">
+        <label htmlFor="exampleInputPassword1" className="form-label">
+          Password:
+          <input name="pass" type="password" className="form-control" placeholder="Введите пароль" id="exampleInputPassword1" />
+        </label>
+      </div>
+      <button type="submit" className="btn btn-secondary">Зарегистрироваться</button>
 
-      </form>
-    </div>
+    </form>
+  // </div>
   );
 }

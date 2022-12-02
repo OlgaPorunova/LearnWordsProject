@@ -27,8 +27,8 @@ export default function Layout({ initState }) {
         <link rel="stylesheet" href="css/main.css" />
         <title>Document</title>
       </head>
-      <body style={{ linearGradient: '45 deg, #757F9A, #D7DDE8' }}>
-        <div id="root">
+      <body>
+        <div id="root" style={{ linearGradient: '45 deg, #757F9A, #D7DDE8' }}>
           <StaticRouter location={initState.path}>
             <App {...initState} />
           </StaticRouter>

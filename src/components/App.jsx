@@ -23,7 +23,7 @@ export default function App({
       .then((res) => setcurrUser(res));
   }, []);
   return (
-    <div className="container">
+    <div style={{ marginLeft: '150px', marginRight: '150px' }}>
       <Navbar name={name} />
       <Routes>
         <Route path="/" element={<Mainpage />} />

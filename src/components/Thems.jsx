@@ -10,10 +10,10 @@ export default function Thems() {
 
   return (
     <div>
-      <div className="d-grid gap-2">
+      <div style={{ marginTop: '150px', marginBottom: '30px' }} className="d-grid gap-2">
         {themes.map((el) => (
           <a href={`/cards/${el.id}`}>
-            <button className="btn btn-primary test" type="button">{`${el.tittle}`}</button>
+            <button style={{ marginBottom: '30px' }} className="btn btn-primary test" type="button">{`${el.tittle}`}</button>
           </a>
         ))}
       </div>
