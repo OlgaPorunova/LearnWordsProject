@@ -3,7 +3,6 @@ import bcrypt from 'bcrypt';
 import { User } from '../db/models';
 
 const router = express.Router();
-// user/reg
 router.post('/reg', async (req, res) => {
   const { name, email, pass } = req.body;
   const password = await bcrypt.hash(pass, 7);
@@ -19,13 +18,10 @@ router.post('/reg', async (req, res) => {
     id: user.id,
     name: user.name,
     email: user.email,
-    // password: user.password,
   };
   res.sendStatus(200);
 });
-// user/avt
 router.post('/avt', async (req, res) => {
-  console.log(req.body, '====>');
   const { email, password } = req.body;
   const currUser = await User.findOne({ where: { email } });
   const compare = await bcrypt.compare(password, currUser.password);

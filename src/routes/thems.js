@@ -5,9 +5,6 @@ const router = express.Router();
 
 router.get('/all', async (req, res) => {
   const dataFromDataBase = await Theme.findAll();
-  console.log('////////', dataFromDataBase);
-  // const initState = { dataFromDataBase };
-  // res.render('Layout', initState);
   res.json(dataFromDataBase);
 });
 

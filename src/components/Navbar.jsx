@@ -2,7 +2,6 @@ import React from 'react';
 
 export default function Navbar({ name }) {
   return (
-  // <div>
     <nav className="navbar" style={{ background: '#e3f2fd' }}>
       {' '}
       Hello!
@@ -16,7 +15,6 @@ export default function Navbar({ name }) {
         <div className="collapse navbar-collapse" id="navbarNav">
 
           {name ? (
-
             <ul className="navbar-nav">
               <li className="nav-item">
                 <a className="nav-link" href="/logout">Logout</a>
@@ -25,27 +23,19 @@ export default function Navbar({ name }) {
                 <a className="nav-link" href="/myScore">LK</a>
               </li>
             </ul>
-
           )
             : (
-
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <a className="nav-link" href="/reg">Registration</a>
                 </li>
-
                 <li className="nav-item">
                   <a className="nav-link" href="/avt">Autorization</a>
                 </li>
               </ul>
-
             )}
-
         </div>
       </div>
     </nav>
-
-  // </div>
-
   );
 }

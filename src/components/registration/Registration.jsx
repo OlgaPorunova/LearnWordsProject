@@ -17,7 +17,6 @@ export default function Registration() {
     }
   };
   return (
-  // <div className="container-reg">
 
     <form
       style={{
@@ -52,6 +51,5 @@ export default function Registration() {
       <button type="submit" className="btn btn-secondary">Зарегистрироваться</button>
 
     </form>
-  // </div>
   );
 }

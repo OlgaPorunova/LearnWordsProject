@@ -35,7 +35,6 @@ export default function App({
         <Route path="/myScore" element={<Table currUser={currUser} />} />
         <Route path="/newForm" element={<Form />} />
       </Routes>
-
     </div>
   );
 }
